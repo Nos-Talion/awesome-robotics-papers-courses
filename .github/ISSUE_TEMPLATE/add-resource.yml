@@ -1,0 +1,57 @@
+name: Suggest a resource
+description: Propose a paper, course, book, dataset, benchmark, or software tool
+title: "[Resource]: "
+labels:
+  - resource suggestion
+body:
+  - type: dropdown
+    id: resource-type
+    attributes:
+      label: Resource type
+      options:
+        - Paper
+        - Course
+        - Book or long-form notes
+        - Dataset or benchmark
+        - Software tool
+        - Correction to an existing entry
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Official title
+      placeholder: Full title of the resource
+    validations:
+      required: true
+  - type: input
+    id: official-url
+    attributes:
+      label: First-party URL
+      description: DOI, arXiv, publisher, author project, university page, or official documentation
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Suggested category
+      placeholder: e.g. motion planning, tactile sensing, robot learning
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why should it be included?
+      description: Explain its technical or educational value in two or three sentences.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched the repository and did not find this resource.
+          required: true
+        - label: This is a first-party link and does not bypass access controls.
+          required: true
